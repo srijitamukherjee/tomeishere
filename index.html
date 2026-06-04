@@ -528,12 +528,22 @@
       btn.innerHTML = '<span>👍</span><span>Thank you for letting us know</span>';
     }
 
-    function handleEmail() {
+    async function handleEmail() {
       const input = document.getElementById('email-input');
-      if (input.value && input.value.includes('@')) {
+      const email = input.value;
+      if (!email || !email.includes('@')) return;
+      
+      try {
+        await fetch('https://formspree.io/f/mnjynapr', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email })
+        });
         input.value = '';
         input.placeholder = 'saved.';
         document.getElementById('thankyou').style.display = 'block';
+      } catch(e) {
+        console.error(e);
       }
     }
   </script>
