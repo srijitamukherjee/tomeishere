@@ -377,6 +377,29 @@
       color: var(--gold-dim);
       margin-top: 1rem;
     }
+    
+    /* ── Try Tøme ── */
+    .try-btn {
+    display: block;
+    text-align: center;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    border: 0.5px solid var(--text-dim);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-weight: 500;
+    border-radius: 1px;
+  }
+
+  .try-btn:hover {
+    border-color: var(--terracotta);
+    color: var(--terracotta);
+  }
 
     /* ── FOOTER ── */
     footer {
@@ -504,6 +527,8 @@
 
   <section class="cta-section">
     <p class="cta-question">Does this feel like something you need?</p>
+
+    <a href="https://emergency-reburial-flyover.ngrok-free.dev" target="_blank" class="try-btn">Try Tøme →</a>
 
     <button class="thumbs-btn" id="thumbs-btn" onclick="handleThumbsUp()">
       <span>👍</span>
